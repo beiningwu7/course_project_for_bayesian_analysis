@@ -1,0 +1,72 @@
+% interacttfqsample.tex
+% v1.05 - August 2017
+
+\documentclass[]{interact}
+\input{pkgs}
+\input{cmds}
+\input{rmd}
+
+
+\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
+\usepackage[caption=false]{subfig}% Support for small, `sub' figures and tables
+%\usepackage[nolists,tablesfirst]{endfloat}% To `separate' figures and tables from text if required
+
+%\usepackage[doublespacing]{setspace}% To produce a `double spaced' document if required
+%\setlength\parindent{24pt}% To increase paragraph indentation when line spacing is doubled
+%\setlength\bibindent{2em}% To increase hanging indent in bibliography when line spacing is doubled
+
+% \usepackage[numbers,sort&compress]{natbib}% Citation support using natbib.sty
+% \bibpunct[, ]{[}{]}{,}{n}{,}{,}% Citation support using natbib.sty
+% \renewcommand\bibfont{\fontsize{10}{12}\selectfont}% Bibliography support using natbib.sty
+\bibliographystyle{apalike}
+
+
+\usepackage[colorlinks=true,linktoc=all,linkcolor=MyRed,urlcolor=blue,citecolor=MyRed]{hyperref}
+
+\theoremstyle{plain}% 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+
+\begin{document}
+
+\articletype{Course Project}% Specify the article type or omit as appropriate
+
+\title{An Efficient Hierarchical Clustering Algorithm via Non-parametric Bayesian Approach \footnote{This is the course project for the Bayesian Analysis, Fall 2021, which is lectured by Professor Weiping Zhang.}}
+
+\author{
+\name{Beining G. Wu\textsuperscript{1}\thanks{Email to: \texttt{andrewwu@mail.ustc.edu.cn}}}
+\affil{\textsuperscript{1}\textit{Department of Statistics and Finance}, \textit{University of Science and Technology of China, Hefei, China.
+}}}
+
+\maketitle
+
+\begin{abstract}
+Clustering is an important type of unsupervised learning problem. In this course project, we present a modified hierarchical clustering algorithm \cite{bhc}, which involves the the probabilistic model an Bayesian method. It differs from the traditional clustering algorithm as it involves a Bayesian hypothesis testing procedure to merge data. And it performs an approximate inference for the Dirichlet Process mixture model, which provides a lower bound for the marginal likelihood. We describe the procedure of this algorithm and use it to analyze a real world data.
+\end{abstract}
+\begin{keywords}
+Nonparametric Bayesian Analysis, Clustering Analysis, Dirichlet Process, Hierarchical Clustering.
+\end{keywords}
+
+\input{review}
+
+\section{Conclusion}
+
+In this course project article, we have presented a novel hierarchical clustering algorithm using Bayesian hypothesis testing and non-parametric Bayesian models. We stated that it can approximately perform inference on the Dirichlet process mixture meanwhile has polynomial time complexity, which outperforms the exact inference that summing up over exponentially many partitions. Finally, we use an example to show that the BHC algorithm could provide a more organized, hence tractable hierarchical structures.
+
+\bibliography{bayesian.bib}
+
+\appendix
+
+\input{append}
+
+\end{document}
